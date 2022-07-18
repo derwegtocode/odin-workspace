@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
-    <link href="rock-paper-scissors.js" type="script">
+    <script src="rock-paper-scissors.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -21,12 +21,20 @@
         Please choose one...</p></div>
     <div class="separation"></div>
     <div class="choices">
-        <button id="rock">ROCK</button>
-        <button id="paper">PAPER</button>
-        <button id="scissors">SCISSORS</button>
+        <button type="button" class="selection" data-selection="rock">ROCK</button>
+        <button type="button" class="selection" data-selection="paper">PAPER</button>
+        <button type="button" class="selection" data-selection="scissors">SCISSORS</button>
     </div>
     <div class="results">
-        <p></p>
+        <div class="player">
+            YOU: 
+            <span id="result-score-player"></span>
+        </div>
+        <div data-final-column></div>
+        <div class="player">
+            THE MACHINE: 
+            <span id="result-score-computer"></span>
+        </div>
     </div>
 </body>
 </html>

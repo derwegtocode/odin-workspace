@@ -48,6 +48,18 @@ h1 {
 button {
     font-size: 50px;
     padding: 5px 10px;
-    -webkit-text-stroke: 1,1px;
+    -webkit-text-stroke: 1px RGB(0, 0, 0);
     background-color: #35383f;
+}
+
+.results {
+    display: grid;
+    font-size: 30px;
+    grid-template-rows: 2(repeat, 1fr);
+    -webkit-text-stroke: 0.4px;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
 }
