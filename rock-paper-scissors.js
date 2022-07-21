@@ -14,7 +14,7 @@ const userChoiceDisplay = document.querySelector('#yourChoice');
 const computerChoiceDisplay = document.querySelector('#computersChoice');
 const yourScore = document.querySelector('#yourScore');
 const machineScore = document.querySelector('#computersScore');
-const messageDiv = document.querySelector('#message');
+const message = document.querySelector('#message');
 
 function updateChoices() {
     userChoiceDisplay.textContent = playerSelection
@@ -30,7 +30,7 @@ const handleClick = (e) => {
     playerSelection = e.target.id
     userChoiceDisplay.textContent = playerSelection
     computerPlay();
-    playRound()
+    playRound();
 }
 
 for (let i = 0; i < OPTIONS.length; i++) {
@@ -45,6 +45,8 @@ function updateScores() {
 
 let computerScore = 0;
 let playerScore = 0;
+let rounds = 0;
+
                 
 function playRound() {
     
@@ -52,7 +54,7 @@ function playRound() {
     if (computerSelection == playerSelection) {
         console.log(computerSelection);
         updateScores();
-        messageDiv.textContent = "It's a tie!"
+        message.textContent = "It's a tie!"
     }
     else if (computerSelection === "rock" && playerSelection === "scissors" || 
         computerSelection === "paper" && playerSelection === "rock" || 
@@ -60,37 +62,60 @@ function playRound() {
         console.log(computerSelection);
         computerScore++;
         updateScores()
-        messageDiv.textContent = "You lose! " + computerSelection + " beats " + playerSelection + "!!";
+        message.textContent = "You lose! " + computerSelection + " beats " + playerSelection + "!!";
     }
     else {
         console.log(computerSelection);
         playerScore++;
         updateScores()
-        messageDiv.textContent = "You win! " + playerSelection + " beats " + computerSelection + "!!";
+        message.textContent = "You win! " + playerSelection + " beats " + computerSelection + "!!";
     };
-    
- 
+
+    rounds++;    
+    document.querySelector('.separation').innerText = 'ROUND: ' + rounds + '/5';
+    if(rounds === 5) {
+        finalScore();
+    }
 };
 
 
 
-/* 5 juegos */
+function finalScore(){    
+    startAgain()
+    if (computerScore > playerScore || playerScore === computerScore) {
+        newGameMessage.textContent = 'Oh no, you lost! Do you want a rematch?';
+    }
+    else if (playerScore > computerScore){
+        newGameMessage.textContent = 'Congratulations!! You win!! Do you want to start a new game?';
+    }
+}
 
-/*
+/*new game prompt*/
+function startAgain(){
+    document.getElementById('messageDiv').append(newGameDiv);
+    yesButton.addEventListener('click', reloadSite)
+    noButton.addEventListener('click', byeMessage)
+}       
 
-       function game() {
-        for (let i = 0; i < 5; i++) {
-            console.log(playRound());
-            console.log("The scores so far are: Computer " + computerScore + " // Player: " + playerScore);
-        }
-        console.log("The final score is: Computer " + computerScore + " // Player: " + playerScore);
-        if (computerScore > playerScore) {
-            console.log("Computer wins! Better luck next time...");
-        }
-        else {
-            console.log("Congratulations!! You win!!");
-        }
-       }
 
-       console.log(game());
-*/
+let newGameDiv = document.createElement('div')
+newGameDiv.setAttribute('id', 'newGameDiv')
+let newGameMessage = document.createElement('p')
+newGameMessage.setAttribute('id', 'newGameMessage')
+let yesButton = document.createElement('button')
+yesButton.setAttribute('id', 'yesButton')
+let noButton = document.createElement('button')
+noButton.setAttribute('id', 'noButton')
+yesButton.textContent = 'YES'
+noButton.textContent = 'NO'
+
+newGameDiv.append(newGameMessage, yesButton, noButton)
+
+
+function reloadSite() {
+    location.reload();
+};
+
+function byeMessage() {
+    alert('Too bad!! Hope to see you again soon!')
+}
