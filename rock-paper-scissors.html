@@ -18,7 +18,7 @@
     </div>
     <div class="intro"><p class="intro-para">Hello, welcome to my version of Rock-Paper-Scissors
         against the machine.</br> 
-        Best score out of five rounds wins.</br> 
+        First to reach five points wins.</br> 
         Please choose one...</p></div>
     <div class="separation"></div>
     <div class="choices">
@@ -27,9 +27,16 @@
         <button type="button" class="selection" id="scissors">SCISSORS </button>
     </div>
     <div class="results">
-        <div id="games"></div>
-        <div id="points"></div>
+        <div id="games">
+            <p id="yourChoice"></p>
+            <p id="computersChoice"></p>
+        </div>    
+        <div id="points">
+            <p id="yourScore"></p>
+            <p id="computersScore"></p>
+        </div>
+    
     </div>
-    <div id="message"></div>
+    <div><p id="message"></p></div>
 </body>
 </html>
