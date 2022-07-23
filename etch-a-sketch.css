@@ -6,7 +6,7 @@ html {
 
 #gameDiv {
     background-color: #98c1d9;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 3fr;
     width: 50em;
     height: 35em;
@@ -45,6 +45,7 @@ h2 {
     width: 500px;
     display: grid;
     align-self: center;
+    background-color: white;
 }
 
 button {
@@ -57,8 +58,9 @@ footer {
     display: flex;
     justify-content: center;
     padding: 10px 0 0 0;
+    flex-direction: column;
 }
-a {
+a, #copyright {
     text-decoration: none;
     margin: 0 auto;
     color: #caf0f8;

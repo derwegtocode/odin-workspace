@@ -16,17 +16,26 @@
     <div id="introDiv"><h2 id="intro">Can you help Pigui decorate his igloo?</h2></div>
     <div id="gameDiv">
         <div id="settingsDiv">
-            <input type="color" value="#3d5a80">
-            <button id="blackColor">BLACK</button>
-            <button id="arcticColor">ARCTIC</button>
-            <button id="erase">ERASER</button>
-            <button id="clear">CLEAR</button>
-            <p>Select a size: </br><input type="range" min="16" max="160" step="16" onchange="changeSize(this.value)"></p>
+            <input type="color" value="#3d5a80" id="colorSelector">
+            <button id="blackColor" onclick="changeColor('black')">BLACK</button>
+            <button id="random" onclick="randomArctic()">THE BLUES</button>
+            <button id="arcticColor" onclick="arcticGrid('#90e0ef'), changeColor('white')">ARCTIC</button>
+            <button id="erase" onclick="changeColor('white')">ERASER</button>
+            <button id="clear" onclick="arcticGrid('#FFFFFF'), changeColor('black')">CLEAR</button>
+            <p>Select a size: </br>
+                <input type="range" min="16" max="80" step="16" onchange="changeSize(this.value)"></p>
             <img src="3734204_83-removebg-preview.png" alt="Happy penguin Pigui">           
         </div>
         <div id="gridDiv"></div>
     </div>
-    <footer><a href='https://www.freepik.com/vectors/christmas-penguin'>Christmas penguin vector created by pch.vector - www.freepik.com</a></footer>
+    <footer><p id="copyright">Copyright © Der Weg To Code</p><a href='https://www.freepik.com/vectors/christmas-penguin'>Christmas penguin vector created by pch.vector - www.freepik.com</a>
+        <a href='https://www.freepik.com/photos/snowy'>Snowy photo created by kjpargeter - www.freepik.com</a></footer>
     <script src="etch-a-sketch.js"></script>
 </body>
 </html>
+
+<!--
+    
+    Der Weg To Code
+
+-->
