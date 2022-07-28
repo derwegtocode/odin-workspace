@@ -7,26 +7,58 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: orange;
 }
 
 #calculator-box {
     display: grid;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 80vh;
+    width: 500px;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    row-gap: 2px;
+    column-gap: 2px;
+    background-color: black;
+    margin: 100px auto;
+    border: 2px solid white;
 }
 
-.calculator-box > button {
-    cursor: pointer;
+#calculator-box > button {
     font-size: 2rem;
-    border: 1px solid white;
+    border: 1px solid black;
     outline: none;
+    background-color: rgb(124, 118, 118);
+}
+
+#calculator-box > button:hover {
     background-color: white;
 }
 
-.calculator-box > button:hover {
+.two-spaces {
+    grid-column: span 2;
+}
+
+#display {
     background-color: white;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 60px;
+}
+
+#display .previousOperation {
+    color:aqua;
+    font-size: 1.5rem;
+}
+
+#display .currentOperation {
+    color:aqua;
+    font-size: 2.5rem;
 }

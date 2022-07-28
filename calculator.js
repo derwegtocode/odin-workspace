@@ -46,13 +46,17 @@ class Calculator {
                 computation = prev * current
                 break
             case '%': 
-                if (current === 0) {
-                    this.currentOperationTextElement.innerText = 'ERROR'
+                if (current != 0) {
+                    computation = prev / current                    
                 }
                 else {
-                    computation = prev / current
+                    equalsButton.addEventListener('click', () => {
+                        alert("YOU CAN'T DIVIDE BY 0!");
+                        //this.currentOperationTextElement.innerText = 'ERROR'
+                    })
+                }
                 break
-                }                
+                              
             default:
                 return
         }
@@ -63,7 +67,7 @@ class Calculator {
 
     getDisplayNumber(number) {
         const stringNumber = number.toString()
-        const integerDigits = parseFloar(stringNumber.split('.')[0])
+        const integerDigits = parseFloat(stringNumber.split('.')[0])
         const decimalDigits = stringNumber.split('.')[1]
         let integerDisplay
         if (isNaN(integerDigits)) {
@@ -100,8 +104,8 @@ class Calculator {
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
-const deleteButton = document.querySelectorAll('[data-delete');
-const allClearButton = document.querySelectorAll('[data-all-clear');
+const deleteButton = document.querySelector('[data-delete]');
+const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperationTextElement = document.querySelector('[data-previous-operation]');
 const currentOperationTextElement = document.querySelector('[data-current-operation]')
 
@@ -126,13 +130,14 @@ equalsButton.addEventListener('click', button => {
     calculator.updateDisplay()
 })
 
-allClearButton.addEventListener('click', button => {
-    calculator.clear()
-    calculator.updateDisplay()
-})
 
 
 deleteButton.addEventListener('click', button => {
     calculator.delete()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click', button => {
+    calculator.clear()
     calculator.updateDisplay()
 })

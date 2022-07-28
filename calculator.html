@@ -6,38 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Calculator</title>
     <link href="calculator.css" rel="stylesheet" type="text/css">
+    <script src="calculator.js" defer></script>
 </head>
 <body>
-    <script src="calculator.js" defer></script>
+    
     <div id="calculator-box">
-        <div class="display-box"><div class="date-hour-display"></div>
         <div id="display">
             <div data-previous-operation class="previous-operation"></div>
-            <div data-current-operation class="current-operation"></div></div>
+            <div data-current-operation class="current-operation"></div>
         </div>
-        <div class="silver-bottom">
-            <button data-all-clear id="clear">CE</button>
-            <button data-delete id="erase">DEL</button>
-            <button data-operation id="plus">+</button>
-            <button data-operation id="minus">-</button>
-            <button data-operation id="multiply">x</button>
-            <button data-operation id="divide">%</button>
+        
+            <button data-all-clear class="two-spaces" id="clear">CE</button>
+            <button data-delete class="two-spaces" id="erase">DEL</button>
             <button data-number id="one">1</button>
             <button data-number id="two">2</button>
             <button data-number id="three">3</button>
+            <button data-operation id="plus">+</button>
             <button data-number id="four">4</button>
             <button data-number id="five">5</button>
             <button data-number id="six">6</button>
+            <button data-operation id="minus">-</button>
             <button data-number id="seven">7</button>
             <button data-number id="eight">8</button>
             <button data-number id="nine">9</button>
-            <button data-number id="zero">0</button>
+            <button data-operation id="multiply">x</button>
             <button data-number id="point">.</button>
+            <button data-number id="zero">0</button>
             <button data-equals id="equal">=</button>
-        </div>
+            <button data-operation id="divide">%</button>
         
 
     </div>
+
     
 </body>
+
 </html>
