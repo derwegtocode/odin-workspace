@@ -46,15 +46,7 @@ class Calculator {
                 computation = prev * current
                 break
             case '%': 
-                if (current != 0) {
-                    computation = prev / current                    
-                }
-                else {
-                    equalsButton.addEventListener('click', () => {
-                        alert("YOU CAN'T DIVIDE BY 0!");
-                        //this.currentOperationTextElement.innerText = 'ERROR'
-                    })
-                }
+                computation = prev / current                    
                 break
                               
             default:
