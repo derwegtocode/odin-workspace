@@ -1,38 +1,15 @@
-
 def caesar_cipher(string, shift)
-coded = string.gsub(/[^a-zA-Z]/, '').bytes
-coded.map! { |number| number + shift}
-coded.map! { |number| number > 122 || number.between?(91, 97) ? number -= 26 : number}
-coded.map! { |number| number.chr}
-#coded = coded.join('')
-final_message = string.tr('^a-zA-Z', coded.join)
-
+down_alphabet = ('a'..'z').to_a
+shifted_dw_alphabet = down_alphabet.rotate(shift)
+up_alphabet = ('A'..'Z').to_a
+shifted_up_alphabet = up_alphabet.rotate!(shift)
+dw_hash = down_alphabet.zip(shifted_dw_alphabet).to_h
+up_hash = up_alphabet.zip(shifted_up_alphabet).to_h
+final_message = string.gsub(/[a-z]/, dw_hash).gsub(/[A-Z]/, up_hash)
 p final_message
 end
 
 
-#def caesar_cipher(string, shifts)
- #creating an index of letters and numbers
-#  indexed_alphabet = Hash.new
-#  alphabet = [*'a'..'z']
-#  alphabet.each_with_index.map {|letter, index| indexed_alphabet[letter] = index}
-  
-  #splitting the string into letters and converting the letters into numbers
-#  array_of_string = Array(string([a-zA-Z]).downcase.split(''))
-#  numbers_array = Array.new
-#  numbers_array = array_of_string.map {|item| item = indexed_alphabet[item]}
-  
-  #shifting the numbers and reasigning the letters
-#  numbers_array.map! { |number| number + shifts }
-#  numbers_array.map! { |index| index > 25 ? index -= 26 : index }
-#  coded_array = Array.new
-#  coded_array = numbers_array.map { |item| item = indexed_alphabet.filter_map { |key, value|
-#    key if value == item} }
-#  coded = coded_array.flatten.join("")
-#  puts string
-  
-#end
 
 
-
-caesar_cipher('Cacaramaz?!', 5)
+caesar_cipher('Whoa! This was a challenge!! Does it actually work?', 18)
