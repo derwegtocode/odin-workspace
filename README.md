@@ -47,3 +47,10 @@ Quick Tips:
 
 You need to buy before you can sell
 Pay attention to edge cases like when the lowest day is the last day or the highest day is the first day.
+
+
+BUBBLE SORT
+
+Build a method #bubble_sort that takes an array and returns a sorted array. It must use the bubble sort methodology (using #sort would be pretty pointless, wouldn’t it?).
+> bubble_sort([4,3,78,2,0,2])
+=> [0,2,2,3,4,78]
