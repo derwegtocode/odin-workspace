@@ -20,9 +20,17 @@ def fibs(n)
   p fibs_array
 end
 
-fibs(9)
+
 #Now write another method 
 #fibs_rec which solves the same problem recursively. 
 #This can be done in just 3 lines 
 #(or 1 if you’re crazy, but don’t consider 
 #either of these lengths a requirement… just get it done).
+
+def fibs_rec(n, fibs_array = [0, 1])
+  return fibs_array.slice(0, fibs_array.length - 1) if n < 2
+  fibs_array << (fibs_array[-1] + fibs_array[-2] )
+  fibs_rec(n - 1, fibs_array)
+end
+
+p fibs_rec(9)
