@@ -1,0 +1,134 @@
+@font-face {
+  font-family: Norse-Bold;
+  src: url(Norse-Bold.otf);
+}
+
+html {
+  background-color: black;
+  font-family: Norse-bold, sans-serif;
+}
+
+.main {
+  display: grid;
+  margin: 0 8%;
+  justify-content: center;
+  grid-template-columns: 1.3fr 1.7fr;
+  height: 100vh;
+  position:relative;
+}
+
+.photo {
+  background-image: url(steinar-engeland-SgyH_Ix9lNE-unsplash.jpg);
+  background-position: 20% 50%;
+  background-repeat: no-repeat;
+  background-position: relative;
+  background-size: cover;
+}
+
+.TOP-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40% 0;
+}
+
+#logo {
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-height: 200px;
+}
+
+
+.form {
+  background-color: white;
+  color: black;
+  align-content: center;
+}
+
+.credits {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  font-weight:bolder;
+}
+
+.intro-text {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  justify-content: center;
+  margin: 30px 20px;
+  text-align: center;
+}
+
+p {
+  padding: 10px 15px;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto 30px;
+  font-size: 30px;
+  column-gap: 10px;
+  align-content: center;
+  justify-content: center;
+  max-height: 500px;
+}
+
+legend {
+  margin: 50px auto;
+}
+
+label {
+  font-size: 20px;
+}
+
+#submit {
+  background-color: rgb(177, 202, 212);
+  font-family: Norse-Bold, sans-serif;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  font-size: 30px;
+  padding: 15px 15px;
+  margin: 10px auto;
+  grid-column: 1/3;
+}
+
+#one, #two {
+  display: grid;
+  column-count: 1;
+  align-content: center;
+  justify-content: center;
+}
+
+.login {
+  font-size: 30px;
+  text-align: center;
+}
+
+a.login {
+  color: rgb(110, 107, 108);
+}
+
+
+input:invalid {
+  border: 2px red solid;
+}
+
+input:valid {
+  border-color: 2px green solid;
+}
+
